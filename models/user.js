@@ -4,10 +4,12 @@ module.exports = (sequelize, DataTypes) => {
     userName: DataTypes.STRING,
     email: DataTypes.STRING,
     postCount: DataTypes.INTEGER
-  }, {});
+  }, {
+    timestamps: false
+  });
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.posts)
+    User.hasMany(models.Posts)
   };
   return User;
 };
